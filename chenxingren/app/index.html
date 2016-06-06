@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="webkid react starterkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>晨型人</title>
+    <link rel="stylesheet" href="../css/morningType.css">
+    <style type="text/css">
+        .hide{display: none;}
+        .show{display: block;}
+        #mask{position: fixed;top:0;left:0; width: 100%;height: 100%;background:#000;z-index:1000;opacity: 0.5;}
+        #modal{position: fixed;width: 90%;background: #fff;top:30%;left:0;right:0;margin: auto; z-index:1001;}
+        @-webkit-keyframes modalActive {
+          0%{
+            transform: scale(0,0)
+          }
+          20%{
+            transform: scale(1.05,1.05);
+          }
+          100%{
+            transform: scale(1,1);
+          }
+        }
+        .animated {
+            -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both
+        }
+        .modal-active{
+          -webkit-animation-name: modalActive;
+        }
+        #modal > div{position: relative;}
+        #modal em.close{position: absolute;right: -0.8em;top:-0.8em;display:block; width: 1.6em;height: 1.6em;background:green;color:#fff;border-radius: 50%;border:1px solid #666;text-align: center;line-height: 1.6em;}
+        #modal button,#modal span{width: 100%;display: block;text-align: center;}
+        #modal button{height: 4em;line-height: 4em;color:#fff;border:0;}
+        #modal span.ts0{font-size: 20px;line-height:3em;}
+        #modal span.ts1{height: 4em;font-size: 15px;padding-top:2em;}
+        #modal span.ts2{height: 4em;font-size:  13px;}
+        #modal span.ts3{height: 3em;font-size: 15px;}
+        #modal span.ts4{height: 3em;font-size: 12px;color:#777;}
+        em.downArrow{ display: inline-block; transform: scale(1.3,1);text-align: center;}
+        #rules p,#rules h4{text-align: left;padding:0.2em 1em;}
+        #rules p span{font-size: 12px;font-weight: 600;}
+        #intro-ad{
+              width: 80%;
+              height: 20rem;
+              display: block;
+              line-height: 20rem;
+              text-align: center;
+              margin: 0 auto;
+              border: 1px solid green;
+        }
+
+        #app{position: relative;}
+        #loading{display: block;position: fixed;width: 100%;height: 100%; top: 0;left: 0;right: 0;bottom: 0;z-index: 1111;background: #fff;}
+        #loading span{position: absolute;top: 40%;left: 0;right: 0;width: 100%;margin: 0 auto;text-align: center; white-space: nowrap;}
+        #loading span.dotting{text-align: inherit;width: 40%;}
+        #loading a{display: block;width: 100%;height: 100%;}
+    </style>
+    <script type="text/javascript">
+      window.onload=function(argument) {
+        // body...
+        // document.getElementById('modal').setAttribute('class','modal-active');
+      }
+      function getpos(e){
+          var t=e.offsetTop;   
+          var l=e.offsetLeft;   
+          while(e=e.offsetParent){
+               t+=e.offsetTop;   
+               l+=e.offsetLeft;   
+           }
+           return {top:t,left:l}
+      }
+      var activityRuleStyle={
+          margin: 'auto',
+          width: '7.2em',
+          display: 'block',
+          textAlign: 'center',
+          color:'blue',
+          textDecoration: 'underline !important'
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
